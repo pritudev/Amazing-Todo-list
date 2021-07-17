@@ -1,4 +1,12 @@
 .bi-bi-check2-square {
   margin-top: -1.1vh;
 }
-/* Nothing else bootstrap did everything lol */
+
+.bi-bi-plus {
+  margin-top: -0.4vh;
+  margin-right: -0.4vh;
+}
+.bi-bi-x-circle {
+  margin-top: -0.03vh;
+  margin-right: -0.1vh;
+}
