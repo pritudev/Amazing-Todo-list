@@ -2,12 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/861555095782293504/865882553423626240/PngItem_5099434.png" type="image/png">
-    <meta property="og:url" content="https://todopage.vercel.app/">
-    <meta property="og:title" content="An Amazing Todo List">
-    <meta property="og:description" content="This Todo list was just project for learning JavaScript but i made it Damn Epic">
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/861555095782293504/865882553423626240/PngItem_5099434.png">
-    <meta name="theme-color" content="#7289DA">
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -19,7 +13,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>An Amazing Todo List</title>
+    <script src="./index.js"></script>
+    <title>Amazing Todo list</title>
   </head>
 
   <body>
@@ -104,64 +99,7 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
-    <script>
-      function getAndUpdate() {
-        console.log("Updating List...");
-        tit = document.getElementById("title").value;
-        desc = document.getElementById("description").value;
-        if (localStorage.getItem("itemsJson") == null) {
-          itemJsonArray = [];
-          itemJsonArray.push([tit, desc]);
-          localStorage.setItem("itemsJson", JSON.stringify(itemJsonArray));
-        } else {
-          itemJsonArrayStr = localStorage.getItem("itemsJson");
-          itemJsonArray = JSON.parse(itemJsonArrayStr);
-          itemJsonArray.push([tit, desc]);
-          localStorage.setItem("itemsJson", JSON.stringify(itemJsonArray));
-        }
-        update();
-      }
-
-      function update() {
-        if (localStorage.getItem("itemsJson") == null) {
-          itemJsonArray = [];
-          localStorage.setItem("itemsJson", JSON.stringify(itemJsonArray));
-        } else {
-          itemJsonArrayStr = localStorage.getItem("itemsJson");
-          itemJsonArray = JSON.parse(itemJsonArrayStr);
-        }
-        let tableBody = document.getElementById("tableBody");
-        let str = "";
-        itemJsonArray.forEach((element, index) => {
-          str += `
-                <tr>
-                <th scope="row">${index + 1}</th>
-                <td>${element[0]}</td>
-                <td>${element[1]}</td> 
-                <td><button class="btn btn-sm btn-primary" onclick="deleted(${index})">Done</button></td> 
-                </tr>`;
-        });
-        tableBody.innerHTML = str;
-      }
-      add = document.getElementById("add");
-      add.addEventListener("click", getAndUpdate);
-      update();
-      function deleted(itemIndex) {
-        console.log("Delete", itemIndex);
-        itemJsonArrayStr = localStorage.getItem("itemsJson");
-        itemJsonArray = JSON.parse(itemJsonArrayStr);
-        itemJsonArray.splice(itemIndex, 1);
-        localStorage.setItem("itemsJson", JSON.stringify(itemJsonArray));
-        update();
-      }
-      function clearStorage() {
-        if (confirm("Are you sure to clear your data (List)")) {
-          console.log("Clearing the storage");
-          localStorage.clear();
-          update();
-        }
-      }
-    </script>
+    <script src="index.js"></script>
 
     <style></style>
   </body>
