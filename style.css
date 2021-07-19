@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@700&display=swap");
+
+body {
+  background: #1c1c25;
+  color: white;
+  font-family: "Catamaran", sans-serif;
+}
 .bi-bi-check2-square {
   margin-top: -1.1vh;
 }
@@ -7,6 +14,18 @@
   margin-right: -0.4vh;
 }
 .bi-bi-x-circle {
-  margin-top: -0.03vh;
+  margin-top: -0.2vh;
   margin-right: -0.1vh;
+}
+
+.table {
+  color: white;
+}
+
+#items h2 {
+  text-align: center;
+}
+
+.form-control {
+  text-decoration: none;
 }
